@@ -1,0 +1,50 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* 条纹背景 */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* 鼠标悬停时变色 */
+}
+
+.cocktail-line {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cocktail-link {
+  text-decoration: none; /* 去掉下划线 */
+  color: #ff6600; /* 设置颜色，例如橙色 */
+  font-weight: bold; /* 文字加粗 */
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* 过渡动画 */
+}
+
+.cocktail-link:hover {
+  color: #cc3300; /* 悬停时颜色变深 */
+  transform: scale(1.1); /* 悬停时放大 */
+}
+
+.cocktail-link:active {
+  color: #990000; /* 点击时颜色变更深 */
+}
+
+
+  
+  
+  

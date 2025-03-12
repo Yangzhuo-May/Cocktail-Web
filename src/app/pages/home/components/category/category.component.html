@@ -1,0 +1,21 @@
+<p>category works!</p>
+
+<div>
+    <table class="cocktail-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories" class="cocktail-line">
+            <td>
+                <button (click)="onCategoryClick(category.strCategory)">
+                  {{ category.strCategory}}
+                </button> 
+            </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+

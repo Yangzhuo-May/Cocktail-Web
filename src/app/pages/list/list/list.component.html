@@ -1,0 +1,28 @@
+<p>cocktail-list works!</p>
+<button (click)="onBackClick()">
+  Back to home
+</button> 
+<div>
+    <table class="cocktail-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cocktail of paginatedCocktails" class="cocktail-line">
+          <td>{{ cocktail.idDrink}}</td>
+          <td>
+            <a [routerLink]="['/detail/lookup.php?i=' + cocktail.idDrink]">{{ cocktail.strDrink }}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Prev Page</button>
+  <span>  {{ currentPage }} / {{ totalPages }}  </span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next Page</button>
+</div>

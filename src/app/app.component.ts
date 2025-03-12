@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './pages/home/home/home.component';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [HomeComponent, RouterOutlet, RouterLink, RouterLinkActive],
+  template:     
+  `
+  <main>
+      <header class="brand-name">      
+      </header>
+      <section class="content">
+      </section>
+      <router-outlet></router-outlet>
+    </main>
+  `,
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'angular-app';
+  title = 'Cocktails';
 }

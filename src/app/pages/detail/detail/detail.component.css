@@ -1,0 +1,22 @@
+.close-button {
+    position: absolute; /* 让按钮固定在右上角 */
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: red; /* 红色背景 */
+    color: white; /* 白色文字 */
+    border: none;
+    border-radius: 50%; /* 圆形 */
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  }
+  
+  .close-button:hover {
+    background-color: darkred; /* 悬停时变成深红色 */
+  }
+  
