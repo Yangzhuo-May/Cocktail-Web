@@ -4,25 +4,12 @@ import { ListComponent } from '../../list/list/list.component';
 import { CategoryComponent } from '../components/category/category.component';
 import { CocktailService } from '../../../services/cocktail.service';
 import { ActivatedRoute, Router} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, CategoryComponent],
-  template: `
-  <p>home works!</p>
-  <div class="wrap">
-      <div class="search">
-        <input type="text" class="searchTerm" placeholder="Search the cocktail by name or ingredients">
-        <button type="submit" class="searchButton">
-              <i class="fa fa-search"></i>
-        </button>
-      </div>
-  </div>
-  <button class="close-button" (click)="getRandomCocktail()">Random Cocktail</button>
-  <div class="cocktail-list-container">
-  <app-category></app-category>
-  </div>
-  `,
+  imports: [CommonModule, CategoryComponent, FormsModule ],
+  templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
@@ -31,11 +18,22 @@ export class HomeComponent {
 
   constructor(private router: Router, private route : ActivatedRoute, private cocktailService: CocktailService){}
 
-  onCheckClick(): void {
-    console.log('按钮被点击');
-  }
-
   getRandomCocktail(): void {
     this.router.navigate(['/detail', 'random.php']);
+  }
+
+  searchText: string = '';  
+  filteredCocktails: any[] = []; 
+
+  onSearchClick(): void {
+    if (this.searchText) {
+      this.cocktailService.searchCocktailByName(this.searchText).subscribe(res => {
+        this.drinks = res.drinks;
+        this.cocktailService.setData({ drinks: this.drinks });  
+      });
+      this.router.navigate(['/list']); 
+    } else {
+      
+    }
   }
 }

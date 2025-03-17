@@ -7,7 +7,7 @@ import { ListComponent } from './pages/list/list/list.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'list/:category', component: ListComponent},
+    { path: 'list', component: ListComponent},
     { path: 'detail/:id', component: DetailComponent},
 ];
 

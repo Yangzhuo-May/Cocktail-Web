@@ -1,2 +1,13 @@
-
+<div class="wrap">
+    <div class="search">
+      <input type="text" class="searchTerm" placeholder="Search the cocktail by name" [(ngModel)]="searchText">
+      <button type="submit" class="searchButton" (click)="onSearchClick()">
+            <i class="fa fa-search"></i>
+      </button>
+    </div>
+</div>
+<button class="close-button" (click)="getRandomCocktail()">Random Cocktail</button>
+<div class="cocktail-list-container">
+<app-category></app-category>
+</div>
   

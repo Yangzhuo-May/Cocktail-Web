@@ -11,6 +11,7 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
   categories: any[] = [];
+  cocktails: any[] = [];
 
   constructor(private router: Router, private route : ActivatedRoute, private cocktailService: CocktailService){}
 
@@ -22,8 +23,13 @@ export class CategoryComponent implements OnInit {
   }
 
   onCategoryClick(category: string): void {
-    
-    console.log('按钮被点击，类别:', category);     
-    this.router.navigate(['/list', category]);
+    if (category) {
+      this.cocktailService.getCocktailsByCategory(category).subscribe(res => {
+        this.cocktails = res.drinks;
+        this.cocktailService.setData({ drinks: this.cocktails }); 
+        this.router.navigate(['/list']);   
+      });
+    }
+
   }
 }
