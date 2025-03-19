@@ -4,7 +4,7 @@
     right: 10px;
     width: 40px;
     height: 40px;
-    background-color: red; /* 红色背景 */
+    background-color: #cbf4fa; /* 红色背景 */
     color: white; /* 白色文字 */
     border: none;
     border-radius: 50%; /* 圆形 */
@@ -17,6 +17,81 @@
   }
   
   .close-button:hover {
-    background-color: darkred; /* 悬停时变成深红色 */
+    background-color: #b7cacd; /* 悬停时变成深红色 */
   }
-  
+
+  .close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+
+  /* 整个卡片背景 */
+  .cocktail-card {
+    position: relative;
+    max-width: 800px; /* 限制最大宽度 */
+    margin: 40px auto; /* 居中 */
+    padding: 20px;
+    background-color: white; /* 卡片背景为白色 */
+    border: 3px solid #E0F7FA; /* 浅蓝色边框 */
+    border-radius: 12px; /* 圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+  }
+
+  /* 详情页面的主容器 */
+.cocktail-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* 控制图片和文字的间距 */
+  padding: 20px;
+  max-width: 900px; /* 最大宽度 */
+  margin: auto;
+}
+
+/* 左侧图片容器 */
+.cocktail-image-container {
+  flex: 1; /* 让图片占据一定空间 */
+  max-width: 600px; /* 控制图片最大宽度 */
+}
+
+/* 图片样式 */
+.cocktail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 右侧信息容器 */
+.cocktail-info-container {
+  flex: 1; /* 文字区域占据较大空间 */
+  min-width: 200px;
+}
+
+/* 文字区域的标题 */
+.cocktail-info-container h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+

@@ -1,50 +1,122 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 18px;
-  text-align: left;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9; 
-}
-
-tr:hover {
-  background-color: #f1f1f1; 
-}
-
-.cocktail-line {
-  transition: background-color 0.3s ease-in-out;
-}
-
-.cocktail-link {
+.button-13 {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
   text-decoration: none;
-  color: #ff6600; 
-  font-weight: bold; 
-  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
 }
 
-.cocktail-link:hover {
-  color: #cc3300; 
-  transform: scale(1.1); 
+.button-13:hover {
+  background-color: #f7fafa;
 }
 
-.cocktail-link:active {
-  color: #990000; 
+.button-13:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+  
+.button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px;
 }
 
+.button-back {
+  justify-content: center;
+}
 
-  
-  
-  
+.button-pages {
+  display: flex;
+  justify-content: center; 
+  width: 100%; 
+  margin-top: 20px; 
+}
+
+.cocktail-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1px;  
+  padding: 20px 20px 0 20px; 
+  justify-items: center;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px; 
+  box-sizing: border-box; 
+  justify-items: center;
+}
+
+/* 每个鸡尾酒项的样式 */
+.cocktail-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px;
+  overflow: hidden; 
+  text-align: center;
+  padding: 10px;
+  width: 100%; 
+  max-width: 200px;
+}
+
+.cocktail-image {
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+
+.cocktail-info {
+  margin-top: 10px;
+}
+
+.cocktail-id {
+  font-size: 12px;
+  color: #777;
+}
+
+.cocktail-name a {
+  font-size: 14px;
+  color: #00B4CC;
+  text-decoration: none;
+}
+
+.cocktail-name a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .cocktail-gallery {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .cocktail-gallery {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 80vh; 
+  height: auto;
+  padding: 5px 0; 
+  box-sizing: border-box;
+}

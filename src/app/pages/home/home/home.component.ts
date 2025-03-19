@@ -30,8 +30,8 @@ export class HomeComponent {
       this.cocktailService.searchCocktailByName(this.searchText).subscribe(res => {
         this.drinks = res.drinks;
         this.cocktailService.setData({ drinks: this.drinks });  
+        this.router.navigate(['/list']); 
       });
-      this.router.navigate(['/list']); 
     } else {
       
     }
