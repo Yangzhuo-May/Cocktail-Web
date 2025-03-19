@@ -1,29 +1,25 @@
-<p>cocktail-list works!</p>
-<button (click)="onBackClick()">
-  Back to home
-</button> 
-<button (click)="onFilterClick('Alcoholic')">Filter by Alcoholic</button>
-<div>
-    <table class="cocktail-table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let cocktail of paginatedCocktails" class="cocktail-line">
-          <td>{{ cocktail.idDrink}}</td>
-          <td>
-            <a [routerLink]="['/detail/lookup.php?i=' + cocktail.idDrink]">{{ cocktail.strDrink }}</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="gallery-container">
+  <div class="cocktail-gallery">
+    <div *ngFor="let cocktail of paginatedCocktails" class="cocktail-item">
+      <img [src]="cocktail.strDrinkThumb + '/small'" alt="{{ cocktail.strDrink }}" class="cocktail-image" />
+      <div class="cocktail-info">
+        <p class="cocktail-id">ID: {{ cocktail.idDrink }}</p>
+        <p class="cocktail-name">
+          <a [routerLink]="['/detail/lookup.php?i=' + cocktail.idDrink]">{{ cocktail.strDrink }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="pagination">
-  <button (click)="prevPage()" [disabled]="currentPage === 1">Prev Page</button>
+<div class="button-container button-pages">
+  <button class="button-13" (click)="prevPage()" [disabled]="currentPage === 1">Prev Page</button>
   <span>  {{ currentPage }} / {{ totalPages }}  </span>
-  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next Page</button>
+  <button class="button-13" (click)="nextPage()" [disabled]="currentPage === totalPages">Next Page</button>
+</div>
+
+<div class="button-container button-back">
+  <button class="button-13" (click)="onBackClick()">
+    Back to home
+  </button> 
 </div>

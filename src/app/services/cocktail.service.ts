@@ -31,7 +31,7 @@ export class CocktailService {
 
   setData(data: { drinks: any[] }): void {
     this.dataList.next(data);
-    console.log('set 数据:', data);
+    console.log('set data:', data);
   }
 
   getData(): Observable<{ drinks: any[] }> {

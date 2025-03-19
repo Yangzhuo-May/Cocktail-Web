@@ -1,18 +1,23 @@
-<p>detail works!</p>
-<button class="close-button" (click)="goBack()">X</button>
-<div *ngFor="let cocktail of drinks" class="cocktail-details">
-    <h2>{{ cocktail.strDrink }}</h2>
-    <img src="{{ cocktail.strDrinkThumb }}/small" alt="{{ cocktail.strDrink }}" />
-    <p><strong>Category:</strong> {{ cocktail.strCategory }}</p>
-    <p><strong>IBA:</strong> {{ cocktail.strIBA }}</p>
-    <p><strong>Alcohol content:</strong> {{ cocktail.strAlcoholic }}</p>
-    <p><strong>Recommended cup:</strong> {{ cocktail.strGlass }}</p>
+<div class="cocktail-card">
+  <button class="close-button" (click)="goBack()">X</button>
   
-    <h3>Preparation Steps</h3>
-    <p><strong>English:</strong> {{ cocktail.strInstructions }}</p>
-    <p><strong>Spanish:</strong> {{ cocktail.strInstructionsES }}</p>
-    <p><strong>German:</strong> {{ cocktail.strInstructionsDE }}</p>
-    <p><strong>French:</strong> {{ cocktail.strInstructionsFR }}</p>
-    <p><strong>Italian:</strong> {{ cocktail.strInstructionsIT }}</p>
-  </div>
-  
+  <ng-container *ngFor="let cocktail of drinks">
+    <div class="cocktail-detail cocktail-details">
+    
+    <div class="cocktail-image-container">
+      <img src="{{ cocktail.strDrinkThumb }}/large" alt="{{ cocktail.strDrink }}" />
+    </div>
+    
+    <div class="cocktail-info-container">
+        <h2>{{ cocktail.strDrink }}</h2>
+        <p><strong>Category:</strong> {{ cocktail.strCategory }}</p>
+        <p *ngIf="cocktail.strIBA"><strong>IBA:</strong> {{ cocktail.strIBA }}</p>
+        <p><strong>Alcohol content:</strong> {{ cocktail.strAlcoholic }}</p>
+        <p><strong>Recommended cup:</strong> {{ cocktail.strGlass }}</p>
+      
+        <h3>Preparation Steps</h3>
+        <p><strong>English:</strong> {{ cocktail.strInstructions }}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
