@@ -115,8 +115,8 @@ app-cocktail-list {
   will-change: transform,opacity;
   z-index: 1;
 
-  position: fixed; /* 定位按钮 */
-  bottom: 360px; /* 距离底部 20px */
+  position: fixed; 
+  bottom: 360px; 
   right: 300px; 
 }
 
@@ -157,8 +157,8 @@ app-cocktail-list {
 
 .button-container {
   display: flex;
-  justify-content: flex-end; /* 按钮水平居中 */
-  margin-top: 20px; /* 适当的间距 */
+  justify-content: flex-end; 
+  margin-top: 20px; 
   width: auto;
   box-sizing: border-box;
   position: relative;

@@ -1,23 +1,23 @@
 .close-button {
-    position: absolute; /* 让按钮固定在右上角 */
+    position: absolute; 
     top: 10px;
     right: 10px;
     width: 40px;
     height: 40px;
-    background-color: #cbf4fa; /* 红色背景 */
-    color: white; /* 白色文字 */
+    background-color: #cbf4fa; 
+    color: white;
     border: none;
-    border-radius: 50%; /* 圆形 */
+    border-radius: 50%; 
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
   
   .close-button:hover {
-    background-color: #b7cacd; /* 悬停时变成深红色 */
+    background-color: #b7cacd; 
   }
 
   .close {
@@ -46,36 +46,33 @@
     transform: rotate(-45deg);
   }
 
-  /* 整个卡片背景 */
   .cocktail-card {
     position: relative;
-    max-width: 800px; /* 限制最大宽度 */
-    margin: 40px auto; /* 居中 */
+    max-width: 800px; 
+    margin: 40px auto; 
     padding: 20px;
-    background-color: white; /* 卡片背景为白色 */
-    border: 3px solid #E0F7FA; /* 浅蓝色边框 */
-    border-radius: 12px; /* 圆角 */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    background-color: white; 
+    border: 3px solid #E0F7FA; 
+    border-radius: 12px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
   }
 
-  /* 详情页面的主容器 */
+  
 .cocktail-detail {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* 控制图片和文字的间距 */
+  gap: 20px; 
   padding: 20px;
-  max-width: 900px; /* 最大宽度 */
+  max-width: 900px; 
   margin: auto;
 }
 
-/* 左侧图片容器 */
 .cocktail-image-container {
-  flex: 1; /* 让图片占据一定空间 */
-  max-width: 600px; /* 控制图片最大宽度 */
+  flex: 1; 
+  max-width: 600px; 
 }
 
-/* 图片样式 */
 .cocktail-image {
   width: 100%;
   height: auto;
@@ -83,13 +80,11 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 右侧信息容器 */
 .cocktail-info-container {
-  flex: 1; /* 文字区域占据较大空间 */
+  flex: 1;
   min-width: 200px;
 }
 
-/* 文字区域的标题 */
 .cocktail-info-container h2 {
   margin-bottom: 10px;
   font-size: 24px;

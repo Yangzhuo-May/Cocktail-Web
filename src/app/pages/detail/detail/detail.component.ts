@@ -19,12 +19,10 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => { 
       this.id = params.get('id') || '';
-      console.log(`接收到的ID: ${this.id}`);
 
       if (this.id) {
         this.cocktailService.getCocktailsById(this.id).subscribe(res => {
           this.drinks = res.drinks;
-          console.log('获取到的鸡尾酒数据:', res);
         });
       }
     }); 
